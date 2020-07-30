@@ -1,5 +1,5 @@
-# Docker PHP-FPM 7.3 & Nginx 1.16 on Alpine Linux
-Example PHP-FPM 7.3 & Nginx 1.16 setup for Docker, build on [Alpine Linux](http://www.alpinelinux.org/).
+# Docker PHP-FPM 7.4 & Nginx 1.16 on Alpine Linux
+Example PHP-FPM 7.4 & Nginx 1.16 setup for Docker, build on [Alpine Linux](http://www.alpinelinux.org/).
 The image is only +/- 35MB large.
 
 
@@ -17,12 +17,12 @@ The image is only +/- 35MB large.
 
 Start the Docker container:
 
-docker run -p 80:8080 gsviec/alpine-nginx-php7
+docker run -p 80:8080 gsviec/nginx-php:7.4
 
 See the PHP info on http://localhost, or the static html page on http://localhost/test.html
 
 Or mount your own code to be served by PHP-FPM & Nginx
 
 ```
-docker run -p 80:8080 -v ~/my-codebase:/var/www/html gsviec/alpine-nginx-php7
+docker run -p 80:8080 -v ~/my-codebase:/var/www/html gsviec/nginx-php:7.4
 ```
