@@ -5,7 +5,7 @@ The image is only +/- 35MB large.
 
 * Built on the lightweight and secure Alpine Linux distribution
 * Very small Docker image size (+/-35MB)
-* Uses PHP 7.3 for better performance, lower cpu usage & memory footprint
+* Uses PHP 7.4 for better performance, lower cpu usage & memory footprint
 * Optimized for 100 concurrent users
 * Optimized to only use resources when there's traffic (by using PHP-FPM's ondemand PM)
 * The servers Nginx, PHP-FPM and supervisord run under a non-privileged user (nobody) to make it more secure

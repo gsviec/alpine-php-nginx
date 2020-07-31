@@ -1,6 +1,6 @@
 FROM php:7.4-fpm-alpine
-LABEL Maintainer="Tim de Pater <hello@gsviec.com>" \
-      Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.3 based on Alpine Linux."
+LABEL Maintainer="Thien Tran <hello@gsviec.com>" \
+      Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.4 based on Alpine Linux."
 
 # Add repos
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
