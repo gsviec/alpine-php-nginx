@@ -58,10 +58,10 @@ RUN chown -R www-data.www-data /run && \
   chown -R www-data.www-data /var/log/nginx
 
 # Setup document root
-RUN mkdir -p /var/www/html
+RUN mkdir -p /var/www
 
 # Make the document root a volume
-VOLUME /var/www/html
+VOLUME /var/www
 #echo " > /usr/local/etc/php/conf.d/phalcon.ini
 # Switch to use a non-root user from here on
 USER www-data
@@ -71,7 +71,7 @@ WORKDIR /var/www
 COPY --chown=www-data src/ /var/www/
 
 # Expose the port nginx is reachable on
-EXPOSE 8080
+EXPOSE 8080 9000
 
 # Let supervisord start nginx & php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
