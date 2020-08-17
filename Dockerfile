@@ -67,8 +67,8 @@ VOLUME /var/www/html
 USER www-data
 
 # Add application
-WORKDIR /var/www/html
-COPY --chown=www-data src/ /var/www/html/
+WORKDIR /var/www
+COPY --chown=www-data src/ /var/www/
 
 # Expose the port nginx is reachable on
 EXPOSE 8080
