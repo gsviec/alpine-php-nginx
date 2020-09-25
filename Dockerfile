@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:7.3-fpm-alpine
 LABEL Maintainer="Thien Tran <hello@gsviec.com>" \
       Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.4 based on Alpine Linux."
 
@@ -17,7 +17,7 @@ RUN apk add php7-pecl-redis
 # Add Composer
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 ARG PSR_VERSION=1.0.0
-ARG PHALCON_VERSION=4.0.5
+ARG PHALCON_VERSION=3.4.3
 ARG PHALCON_EXT_PATH=php7/64bits
 
 RUN set -xe && \
