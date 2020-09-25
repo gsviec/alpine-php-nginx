@@ -8,9 +8,9 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
 # Add basics first
 RUN apk update && apk upgrade && apk add \
 	bash curl ca-certificates openssl openssh git nano libxml2-dev tzdata icu-dev openntpd libedit-dev libzip-dev \
-        supervisor
+        supervisor aspell-libs aspell-dev
 
-RUN docker-php-ext-install pdo_mysql soap zip pcntl  sockets intl exif
+RUN docker-php-ext-install pdo_mysql soap pspell zip pcntl  sockets intl exif
 
 RUN apk add php7-pecl-redis
 
@@ -77,4 +77,4 @@ EXPOSE 8080 9000
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 # Configure a healthcheck to validate that everything is up&running
-HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
+#HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
