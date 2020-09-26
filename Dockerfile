@@ -52,10 +52,6 @@ COPY config/php.ini /etc/php7/conf.d/zzz_custom.ini
 # Configure supervisord
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Make sure files/folders needed by the processes are accessable when they run under the nobody user
-RUN chown -R www-data.www-data /run && \
-  chown -R www-data.www-data /var/lib/nginx && \
-  chown -R www-data.www-data /var/log/nginx
 
 # Setup document root
 RUN mkdir -p /var/www
@@ -64,11 +60,10 @@ RUN mkdir -p /var/www
 VOLUME /var/www
 #echo " > /usr/local/etc/php/conf.d/phalcon.ini
 # Switch to use a non-root user from here on
-USER www-data
 
 # Add application
 WORKDIR /var/www
-COPY --chown=www-data src/ /var/www/
+COPY  src/ /var/www/
 
 # Expose the port nginx is reachable on
 EXPOSE 8080 9000
