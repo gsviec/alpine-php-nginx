@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: | 
-         export CONTRACTS_NODE=${{ GITHUB_ACTION_PATH }}/target/debug/node-template
+         export CONTRACTS_NODE=${{github.action_path}}/target/debug/node-template
          echo $CONTRACTS_NODE
-         echo "Ok $GITHUB_ACTION_PATH"
+         echo "Ok ${{github.action_path}}"
    
