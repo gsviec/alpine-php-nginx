@@ -21,4 +21,5 @@ jobs:
          export CONTRACTS_NODE=${{github.action_path}}/target/debug/node-template
          echo $CONTRACTS_NODE
          echo "Ok ${{github.action_path}}"
+      shell: bash
    
