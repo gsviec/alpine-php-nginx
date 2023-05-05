@@ -20,4 +20,5 @@ jobs:
       run: | 
          export CONTRACTS_NODE=${{ env.GITHUB_ACTION_PATH }}/target/debug/node-template
          echo $CONTRACTS_NODE
+         echo "Ok $GITHUB_ACTION_PATH"
    
