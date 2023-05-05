@@ -8,7 +8,7 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
-  TARGET_PATH: ${{ vars.GITHUB_ACTION_PATH }}
+  TARGET_PATH: ${{ GITHUB_ACTION_PATH }}
 jobs:
   build:
 
